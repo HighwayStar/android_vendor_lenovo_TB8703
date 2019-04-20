@@ -97,7 +97,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/bin/qseecomd:system/vendor/bin/qseecomd \
     vendor/lenovo/TB8703/proprietary/vendor/bin/qti:system/vendor/bin/qti \
     vendor/lenovo/TB8703/proprietary/vendor/bin/rmt_storage:system/vendor/bin/rmt_storage \
-    vendor/lenovo/TB8703/proprietary/vendor/bin/sensors.qcom:system/vendor/bin/sensors.qcom \
+    vendor/lenovo/TB8703/proprietary/vendor/bin/sensors.qti:system/vendor/bin/sensors.qti \
     vendor/lenovo/TB8703/proprietary/vendor/bin/tftp_server:system/vendor/bin/tftp_server \
     vendor/lenovo/TB8703/proprietary/vendor/bin/thermal-engine:system/vendor/bin/thermal-engine \
     vendor/lenovo/TB8703/proprietary/vendor/bin/time_daemon:system/vendor/bin/time_daemon \
