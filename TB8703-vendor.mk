@@ -18,6 +18,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/bin/dpmd:system/bin/dpmd \
     vendor/lenovo/TB8703/proprietary/vendor/bin/mm-qcamera-daemon:system/vendor/bin/mm-qcamera-daemon \
     vendor/lenovo/TB8703/proprietary/vendor/bin/wcnss_service:system/vendor/bin/wcnss_service \
+    vendor/lenovo/TB8703/proprietary/bin/wfdservice:system/bin/wfdservice \
     vendor/lenovo/TB8703/proprietary/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:system/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
     vendor/lenovo/TB8703/proprietary/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb:system/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb \
     vendor/lenovo/TB8703/proprietary/vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb:system/vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb \
@@ -44,6 +45,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/firmware/a530_pm4.fw:system/vendor/firmware/a530_pm4.fw \
     vendor/lenovo/TB8703/proprietary/vendor/firmware/cpp_firmware_v1_5_0.fw:system/vendor/firmware/cpp_firmware_v1_5_0.fw \
     vendor/lenovo/TB8703/proprietary/etc/init/dpmd.rc:system/etc/init/dpmd.rc \
+    vendor/lenovo/TB8703/proprietary/etc/init/wfdservice.rc:system/etc/init/wfdservice.rc \
     vendor/lenovo/TB8703/proprietary/etc/permissions/cneapiclient.xml:system/etc/permissions/cneapiclient.xml \
     vendor/lenovo/TB8703/proprietary/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
     vendor/lenovo/TB8703/proprietary/etc/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
@@ -51,12 +53,37 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/etc/permissions/qcrilhook.xml:system/etc/permissions/qcrilhook.xml \
     vendor/lenovo/TB8703/proprietary/etc/permissions/qti_libpermissions.xml:system/etc/permissions/qti_libpermissions.xml \
     vendor/lenovo/TB8703/proprietary/etc/permissions/qti_permissions.xml:system/etc/permissions/qti_permissions.xml \
+    vendor/lenovo/TB8703/proprietary/etc/wfdconfig.xml:system/etc/wfdconfig.xml \
+    vendor/lenovo/TB8703/proprietary/etc/wfdconfigsink.xml:system/etc/wfdconfigsink.xml \
     vendor/lenovo/TB8703/proprietary/framework/cneapiclient.jar:system/framework/cneapiclient.jar \
     vendor/lenovo/TB8703/proprietary/framework/com.qti.dpmframework.jar:system/framework/com.qti.dpmframework.jar \
     vendor/lenovo/TB8703/proprietary/framework/com.quicinc.cne.jar:system/framework/com.quicinc.cne.jar \
     vendor/lenovo/TB8703/proprietary/framework/dpmapi.jar:system/framework/dpmapi.jar \
     vendor/lenovo/TB8703/proprietary/framework/qcrilhook.jar:system/framework/qcrilhook.jar \
     vendor/lenovo/TB8703/proprietary/framework/qti-telephony-common.jar:system/framework/qti-telephony-common.jar \
+    vendor/lenovo/TB8703/proprietary/lib/com.qualcomm.qti.wifidisplayhal@1.0.so:system/lib/com.qualcomm.qti.wifidisplayhal@1.0.so \
+    vendor/lenovo/TB8703/proprietary/lib/extractors/libmmparser.so:system/lib/extractors/libmmparser.so \
+    vendor/lenovo/TB8703/proprietary/lib/libFileMux.so:system/lib/libFileMux.so \
+    vendor/lenovo/TB8703/proprietary/lib/libOmxMux.so:system/lib/libOmxMux.so \
+    vendor/lenovo/TB8703/proprietary/lib/libmmosal.so:system/lib/libmmosal.so \
+    vendor/lenovo/TB8703/proprietary/lib/libmmparser_lite.so:system/lib/libmmparser_lite.so \
+    vendor/lenovo/TB8703/proprietary/lib/libmmrtpdecoder.so:system/lib/libmmrtpdecoder.so \
+    vendor/lenovo/TB8703/proprietary/lib/libmmrtpencoder.so:system/lib/libmmrtpencoder.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdavenhancements.so:system/lib/libwfdavenhancements.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdcodecv4l2.so:system/lib/libwfdcodecv4l2.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdcommonutils.so:system/lib/libwfdcommonutils.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdconfigutils.so:system/lib/libwfdconfigutils.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdmminterface.so:system/lib/libwfdmminterface.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdmmsink.so:system/lib/libwfdmmsink.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdmmsrc.so:system/lib/libwfdmmsrc.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdrtsp.so:system/lib/libwfdrtsp.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdservice.so:system/lib/libwfdservice.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfdsm.so:system/lib/libwfdsm.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfduibcinterface.so:system/lib/libwfduibcinterface.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfduibcsink.so:system/lib/libwfduibcsink.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfduibcsinkinterface.so:system/lib/libwfduibcsinkinterface.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfduibcsrc.so:system/lib/libwfduibcsrc.so \
+    vendor/lenovo/TB8703/proprietary/lib/libwfduibcsrcinterface.so:system/lib/libwfduibcsrcinterface.so \
     vendor/lenovo/TB8703/proprietary/lib64/com.qualcomm.qti.dpm.api@1.0.so:system/lib64/com.qualcomm.qti.dpm.api@1.0.so \
     vendor/lenovo/TB8703/proprietary/lib64/lib-imscamera.so:system/lib64/lib-imscamera.so \
     vendor/lenovo/TB8703/proprietary/lib64/lib-imsvideocodec.so:system/lib64/lib-imsvideocodec.so \
@@ -70,7 +97,10 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/lib64/libdpmtcm.so:system/lib64/libdpmtcm.so \
     vendor/lenovo/TB8703/proprietary/lib64/libimscamera_jni.so:system/lib64/libimscamera_jni.so \
     vendor/lenovo/TB8703/proprietary/lib64/libimsmedia_jni.so:system/lib64/libimsmedia_jni.so \
+    vendor/lenovo/TB8703/proprietary/lib64/libmmosal.so:system/lib64/libmmosal.so \
     vendor/lenovo/TB8703/proprietary/lib64/librcc.so:system/lib64/librcc.so \
+    vendor/lenovo/TB8703/proprietary/lib64/libwfdclient.so:system/lib64/libwfdclient.so \
+    vendor/lenovo/TB8703/proprietary/lib64/libwfdnative.so:system/lib64/libwfdnative.so \
     vendor/lenovo/TB8703/proprietary/lib64/vendor.qti.imsrtpservice@1.0.so:system/lib64/vendor.qti.imsrtpservice@1.0.so \
     vendor/lenovo/TB8703/proprietary/vendor/bin/ATFWD-daemon:system/vendor/bin/ATFWD-daemon \
     vendor/lenovo/TB8703/proprietary/vendor/bin/adsprpcd:system/vendor/bin/adsprpcd \
@@ -101,6 +131,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/bin/tftp_server:system/vendor/bin/tftp_server \
     vendor/lenovo/TB8703/proprietary/vendor/bin/thermal-engine:system/vendor/bin/thermal-engine \
     vendor/lenovo/TB8703/proprietary/vendor/bin/time_daemon:system/vendor/bin/time_daemon \
+    vendor/lenovo/TB8703/proprietary/vendor/bin/wifidisplayhalservice:system/vendor/bin/wifidisplayhalservice \
     vendor/lenovo/TB8703/proprietary/vendor/bin/xtra-daemon:system/vendor/bin/xtra-daemon \
     vendor/lenovo/TB8703/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml:system/vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml \
     vendor/lenovo/TB8703/proprietary/vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml:system/vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml \
@@ -133,6 +164,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/etc/data/netmgr_config.xml:system/vendor/etc/data/netmgr_config.xml \
     vendor/lenovo/TB8703/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:system/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
     vendor/lenovo/TB8703/proprietary/vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc:system/vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc \
+    vendor/lenovo/TB8703/proprietary/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc:system/vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc \
     vendor/lenovo/TB8703/proprietary/vendor/etc/init/vendor.qti.gnss@1.0-service.rc:system/vendor/etc/init/vendor.qti.gnss@1.0-service.rc \
     vendor/lenovo/TB8703/proprietary/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc:system/vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc \
     vendor/lenovo/TB8703/proprietary/vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc:system/vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc \
@@ -140,6 +172,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/etc/perf/perfboostsconfig.xml:system/vendor/etc/perf/perfboostsconfig.xml \
     vendor/lenovo/TB8703/proprietary/vendor/etc/perf/targetconfig.xml:system/vendor/etc/perf/targetconfig.xml \
     vendor/lenovo/TB8703/proprietary/vendor/etc/perf/targetresourceconfigs.xml:system/vendor/etc/perf/targetresourceconfigs.xml \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so:system/vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/egl/eglSubDriverAndroid.so:system/vendor/lib/egl/eglSubDriverAndroid.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/egl/libEGL_adreno.so:system/vendor/lib/egl/libEGL_adreno.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/egl/libGLESv1_CM_adreno.so:system/vendor/lib/egl/libGLESv1_CM_adreno.so \
@@ -345,6 +378,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libmmcamera_trueportrait_lib.so:system/vendor/lib/libmmcamera_trueportrait_lib.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libmmcamera_ubifocus_lib.so:system/vendor/lib/libmmcamera_ubifocus_lib.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libmmjpeg.so:system/vendor/lib/libmmjpeg.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libmmosal_proprietary.so:system/vendor/lib/libmmosal_proprietary.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libmmqjpeg_codec.so:system/vendor/lib/libmmqjpeg_codec.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libmmqjpegdma.so:system/vendor/lib/libmmqjpegdma.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/liboptizoom.so:system/vendor/lib/liboptizoom.so \
@@ -381,6 +415,11 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libubifocus.so:system/vendor/lib/libubifocus.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libvpplibrary.so:system/vendor/lib/libvpplibrary.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/libvqzip.so:system/vendor/lib/libvqzip.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libwfdcommonutils_proprietary.so:system/vendor/lib/libwfdcommonutils_proprietary.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libwfdhaldsmanager.so:system/vendor/lib/libwfdhaldsmanager.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libwfdhdcpcp.so:system/vendor/lib/libwfdhdcpcp.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libwfdmmservice.so:system/vendor/lib/libwfdmmservice.so \
+    vendor/lenovo/TB8703/proprietary/vendor/lib/libwfdmodulehdcpsession.so:system/vendor/lib/libwfdmodulehdcpsession.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/sensors.ssc.so:system/vendor/lib/sensors.ssc.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/soundfx/libqcbassboost.so:system/vendor/lib/soundfx/libqcbassboost.so \
     vendor/lenovo/TB8703/proprietary/vendor/lib/soundfx/libqcreverb.so:system/vendor/lib/soundfx/libqcreverb.so \
@@ -559,8 +598,10 @@ PRODUCT_PACKAGES += \
     datastatusnotification \
     uceShimService \
     CNEService \
+    WfdService \
     dpmserviceapp \
     ims \
     qcrilmsgtunnel \
     PowerOffAlarm \
-    TimeService
+    TimeService \
+    WfdCommon
